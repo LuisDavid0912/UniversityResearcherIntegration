@@ -1,3 +1,8 @@
+#SerpApi account
+
+<img width="1124" height="671" alt="Screenshot 2025-09-29 at 2 59 26 p m" src="https://github.com/user-attachments/assets/daa770de-d56e-4679-a201-ce6c84ddb49c" />
+
+
 # University Researcher Data Integration System
 
 This repository contains the source code and documentation for the project to automate the integration of researcher data from Google Scholar.
