@@ -22,6 +22,35 @@ The main goal of this project is to automate the process of retrieving and integ
 This project solves the problem of manual, time-consuming, and error-prone data collection. It provides the university with an efficient, reliable, and up-to-date system for generating scientific production reports and analyzing research impact. By automating this workflow, staff can focus on analysis rather than data entry.
 
 ---
+<details>
+<summary>💡 <strong>Click to expand Commercial Viability & Business Model</strong></summary>
+
+### 🎯 Target Audience
+This service is designed for institutions that need to track and analyze their research output, such as:
+* **Universities & Academic Institutions:** For accreditation, global rankings, and faculty performance reviews.
+* **Research Centers & Labs:** To justify funding and generate progress reports.
+* **Corporate R&D Departments:** To monitor internal innovation and competitor activity.
+
+### 💰 Value Proposition
+The core value of this service lies in transforming a manual, error-prone process into an efficient, automated system that delivers:
+* **Cost Savings:** Drastically reduces the hours spent on manual data collection.
+* **Data Accuracy:** Provides reliable, up-to-date information for credible reporting.
+* **Strategic Insights:** Enables data-driven decisions on performance, funding, and hiring.
+
+### 🚀 Monetization Model: Software as a Service (SaaS)
+The proposed business model is a tiered subscription service, offering different levels of functionality to meet diverse needs.
+
+* **Starter Tier:** Aimed at small teams or individual labs, tracking a limited number of researchers with monthly data updates.
+* **Professional Tier:** Designed for entire departments or medium-sized institutions, offering a higher researcher limit, weekly updates, and data export features (CSV, PDF).
+* **Enterprise Tier:** A full solution for large universities, providing unlimited researchers, daily updates, advanced analytics dashboards, and API access for integration with their internal systems.
+
+### 🌐 Future Growth
+Future expansion opportunities include:
+* Integrating other data sources like Scopus, Web of Science, and PubMed.
+* Developing advanced citation and collaboration network analysis.
+* Offering cross-institutional benchmarking services.
+
+</details>
 
 <details>
 <summary>🐛 <strong>Click to expand the detailed Debugging Log for Sprint 2</strong></summary>
