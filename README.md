@@ -139,7 +139,9 @@ Future expansion opportunities include:
 
 ---
 
-## 🚀 How to Execute
+
+<details>
+<summary>🚀 <strong>Click to expand How to Execute</strong></summary>
 
 ### Prerequisites
 * Java JDK 17 or higher
@@ -171,6 +173,7 @@ Future expansion opportunities include:
     ```bash
     mvn exec:java -Dexec.mainClass="com.university.project.Main"
     ```
+</details>
 
 ---
 
