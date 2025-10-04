@@ -2,7 +2,6 @@ package com.university.project.view;
 
 import com.university.project.model.Article;
 import com.university.project.model.Author;
-import com.university.project.model.Interest;
 import java.util.List;
 
 /**

@@ -56,7 +56,6 @@ public class AuthorController {
                 // 200 OK is the standard code for a successful HTTP request.
                 if (statusCode == 200) {
 
-                    // INICIO DE LA MODIFICACIÓN PARA DEPURAR ----
                     // System.out.println("--- RESPUESTA JSON RECIBIDA ---");
                     // System.out.println(responseBody);
 

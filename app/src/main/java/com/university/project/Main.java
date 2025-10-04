@@ -35,8 +35,6 @@ public class Main {
         }
 
 
-
-
 // MVC INITIALIZATION
 
         // 1. Instantiate the View: Responsible for displaying the output.
