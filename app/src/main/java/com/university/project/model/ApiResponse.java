@@ -1,5 +1,6 @@
 package com.university.project.model;
 
+import com.google.gson.annotations.SerializedName;
 import java.util.List;
 
 /**
@@ -8,21 +9,19 @@ import java.util.List;
  */
 public class ApiResponse {
     private Author author;
-    private List<Article> articles; // I Add the list here
+    private List<Article> articles;
+    
+    // Add the pagination object, mapping it from the JSON's "serpapi_pagination" field.
+    @SerializedName("serpapi_pagination")
+    private SerpApiPagination serpapiPagination;
 
-    /**
-     * Gets the author object from the response.
-     * @return The Author object.
-     */
-
+    // --- Getters and Setters ---
     public Author getAuthor() { return author; }
     public void setAuthor(Author author) { this.author = author; }
 
-    /**
-     * Gets the list of articles from the response.
-     * @return A list of Article objects.
-     */
-
-    public List<Article> getArticles() { return articles; } // I add the methods here
+    public List<Article> getArticles() { return articles; }
     public void setArticles(List<Article> articles) { this.articles = articles; }
+
+    public SerpApiPagination getSerpapiPagination() { return serpapiPagination; }
+    public void setSerpapiPagination(SerpApiPagination serpapiPagination) { this.serpapiPagination = serpapiPagination; }
 }
