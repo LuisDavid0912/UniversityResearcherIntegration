@@ -1,120 +1,110 @@
 package com.university.project.controller;
 
 import com.google.gson.Gson;
-
 import com.university.project.dao.ArticleDao;
-
+import com.university.project.dao.ResearcherDao;
 import com.university.project.model.ApiResponse;
-
 import com.university.project.model.Article;
-import com.university.project.model.Author;
-
 import com.university.project.view.AuthorView;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
-
 import java.io.IOException;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
-
 import java.util.List;
 
-/**
- * The Controller in the MVC pattern.
- * It handles the main business logic: fetching data from the API,
- * parsing it into the Model, and telling the View to display it.
- */
+
 public class AuthorController {
     private final AuthorView view;
-    private final ArticleDao dao;
+    private final ArticleDao articleDao;
+    private final ResearcherDao researcherDao;
 
-    /**
-     * Constructs the controller and links it to the view.
-     * 
-     * @param view The view instance responsible for displaying data.
-     */
-
-    public AuthorController(AuthorView view, ArticleDao dao) {
+    public AuthorController(AuthorView view, ArticleDao articleDao, ResearcherDao researcherDao) {
         this.view = view;
-        this.dao = dao;
+        this.articleDao = articleDao;
+        this.researcherDao = researcherDao;
     }
 
     /**
-     * Fetches author data from the SerpApi for a given author ID.
-     * 
-     * @param authorId The Google Scholar author ID to search for.
-     * @param apiKey   The SerpApi private key for authentication.
+     * Fetches author data from SerpApi, respecting a maximum number of articles, and handles pagination.
+     * @param authorId The Google Scholar author ID.
+     * @param apiKey   The SerpApi private key.
+     * @param articleLimit The maximum number of articles to save for this author.
      */
+    public void fetchAuthorData(String authorId, String apiKey, int articleLimit) {
+        String currentUrl = buildUrl(authorId, apiKey, 0);
+        int researcherId = -1;
+        int pageCount = 1;
+        int totalArticlesSaved = 0;
 
-    public void fetchAuthorData(String authorId, String apiKey) {
-        String url = buildUrl(authorId, apiKey);
+        do {
+            try (CloseableHttpClient httpClient = HttpClients.createDefault()) {
+                HttpGet request = new HttpGet(currentUrl);
+                System.out.println("Executing request for page " + pageCount + ": " + currentUrl);
 
-        // I use a try-with-resources statement to ensure the HttpClient is closed
-        // automatically.
-        try (CloseableHttpClient httpClient = HttpClients.createDefault()) {
-            HttpGet request = new HttpGet(url);
-            System.out.println("Executing request to: " + url);
+                try (CloseableHttpResponse response = httpClient.execute(request)) {
+                    int statusCode = response.getStatusLine().getStatusCode();
+                    String responseBody = EntityUtils.toString(response.getEntity());
 
-            try (CloseableHttpResponse response = httpClient.execute(request)) {
-                int statusCode = response.getStatusLine().getStatusCode();
-                String responseBody = EntityUtils.toString(response.getEntity());
-
-                // 200 OK is the standard code for a successful HTTP request.
-                if (statusCode == 200) {
-                    Gson gson = new Gson();
-                    ApiResponse apiResponse = gson.fromJson(responseBody, ApiResponse.class);
-
-                    
-
-                    // --- START OF ROBUSTNESS CORRECTION ---
-                    // EVEN IF THE STATUS IS 200, WE VERIFY THAT THE API HAS PROVIDED US WITH THE DATA
-                    if (apiResponse.getAuthor() == null || apiResponse.getArticles() == null) {
-                        view.displayError("The API returned a successful response but no data for the author with ID: "
-                                + authorId);
-                        return; // We stop execution FOR THIS AUTHOR and continue with the next one
-                    }
-                    // --- END OF CORRECTION ---
-
-
-                    // If we get here, it means that the data does exist.
-                    view.displayAuthorDetails(apiResponse.getAuthor(), apiResponse.getArticles());
-
-                    System.out.println("\n--- Saving items to the database ---");
-                    List<Article> articles = apiResponse.getArticles();
-                    String researcherName = apiResponse.getAuthor().getName();
-
-                    if (articles != null && !articles.isEmpty()) {
-                        for (int i = 0; i < 3 && i < articles.size(); i++) {
-                            dao.saveArticle(articles.get(i), researcherName);
+                    if (statusCode == 200) {
+                        Gson gson = new Gson();
+                        ApiResponse apiResponse = gson.fromJson(responseBody, ApiResponse.class);
+                        
+                        if (pageCount == 1) {
+                            if (apiResponse.getAuthor() == null) {
+                                view.displayError("API response successful but no author data for ID: " + authorId);
+                                return;
+                            }
+                            view.displayAuthorDetails(apiResponse.getAuthor(), apiResponse.getArticles());
+                            System.out.println("\n--- Processing and saving to Database (limit: " + articleLimit + " articles) ---");
+                            researcherId = researcherDao.findOrCreateResearcher(apiResponse.getAuthor(), authorId);
                         }
+                        
+                        if (researcherId != -1) {
+                            List<Article> articles = apiResponse.getArticles();
+                            if (articles != null && !articles.isEmpty()) {
+                                for (Article article : articles) {
+                                    // If we have reached the limit, stop saving articles.
+                                    if (totalArticlesSaved >= articleLimit) {
+                                        break; // Exit the inner 'for' loop.
+                                    }
+                                    articleDao.saveArticle(article, researcherId);
+                                    totalArticlesSaved++;
+                                }
+                            }
+                        }
+
+                        // Check for the next page
+                        if (apiResponse.getSerpapiPagination() != null && apiResponse.getSerpapiPagination().getNext() != null) {
+                            currentUrl = apiResponse.getSerpapiPagination().getNext() + "&api_key=" + apiKey;
+                            pageCount++;
+                            Thread.sleep(1000);
+                        } else {
+                            currentUrl = null;
+                        }
+
+                    } else {
+                        view.displayError("API Error: " + statusCode);
+                        currentUrl = null;
                     }
-                } else {
-                    view.displayError("API Error: " + statusCode + "\nResponse: " + responseBody);
                 }
+            } catch (IOException | InterruptedException e) {
+                view.displayError("An error occurred: " + e.getMessage());
+                currentUrl = null;
             }
-        } catch (IOException e) {
-            // Handle network errors (e.g., no internet connection).
-            view.displayError("Connection error: " + e.getMessage());
-        }
+        // The loop continues as long as there is a next URL AND we haven't reached our article limit.
+        } while (currentUrl != null && totalArticlesSaved < articleLimit);
+
+        System.out.println("\n--- Pagination complete. Total articles saved: " + totalArticlesSaved + " ---");
     }
 
-    /**
-     * Builds the complete URL for the SerpApi request.
-     * 
-     * @param authorId The author ID to include in the URL.
-     * @param apiKey   The API key to include in the URL.
-     * @return A fully formed and encoded URL string.
-     */
-
-    private String buildUrl(String authorId, String apiKey) {
-        // URL-encode parameters to handle special characters safely.
+    private String buildUrl(String authorId, String apiKey, int startIndex) {
         String encodedAuthorId = URLEncoder.encode(authorId, StandardCharsets.UTF_8);
-        String encodedApiKey = URLEncoder.encode(apiKey, StandardCharsets.UTF_8);
         return String.format(
-                "https://serpapi.com/search.json?engine=google_scholar_author&author_id=%s&api_key=%s",
-                encodedAuthorId, encodedApiKey);
+                "https://serpapi.com/search.json?engine=google_scholar_author&author_id=%s&api_key=%s&start=%d",
+                encodedAuthorId, apiKey, startIndex);
     }
 }
