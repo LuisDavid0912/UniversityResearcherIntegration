@@ -207,6 +207,39 @@ Future expansion opportunities include:
     ```
 </details>
 
+<details>
+<summary>🚀 <strong> Current Status of Your Project: A Robust Data Integration Application</strong></summary>
+
+## Professional Architecture:
+Uses the MVC (Model-View-Controller) pattern to separate business logic (the Controller), data structure (the Model), and presentation (the View).
+
+Uses the DAO (Data Access Object) pattern to isolate all communication with the database, keeping your business logic clean of SQL code.
+
+## Key Features:
+Dynamic Configuration: The application no longer depends on hardcoded data. It reads its “task list” (which researchers to process) directly from the database (researchers with is_tracked = TRUE).
+
+### Secure Connection: 
+Load all sensitive credentials (API Key, database username and password) from an .env file that is ignored by Git, following best security practices.
+
+### External API Integration: 
+Efficiently connect to the SerpApi API to obtain data in JSON format.
+
+### Pagination Handling: 
+Not satisfied with the first page. Automatically iterates over all pages of results for a researcher to obtain their complete publication history.
+
+### Limit Control: 
+Despite being able to obtain all the data, I added a “control knob” (ARTICLE_LIMIT) to limit the number of articles to be processed, making it more efficient and controllable for evaluation.
+
+### Persistence in Normalized Database: 
+Stores information in a well-structured MySQL database, with separate tables for researchers and articles, connected by a foreign key (FOREIGN KEY). This avoids redundancy and is the professional standard.
+
+### Duplicate Handling: 
+It is smart enough not to create duplicate researchers in the database thanks to the “search or create” logic of ResearcherDao.
+
+### Robust Error Handling:
+The application does not crash if the API returns an unexpected response; instead, it reports the error and continues with the next researcher.
+
+</details>
 ---
 
 <p align="center"><i>This project is being developed as part of the Digital NAO "Server and Database Commands" challenge.</i></p>
