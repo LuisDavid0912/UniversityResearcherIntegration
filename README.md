@@ -208,7 +208,7 @@ Future expansion opportunities include:
 </details>
 
 <details>
-<summary>🚀 <strong> Current Status of Your Project: A Robust Data Integration Application</strong></summary>
+<summary>🔧 <strong> Current Status of The Project: A Robust Data Integration Application</strong></summary>
 
 ## Professional Architecture:
 Uses the MVC (Model-View-Controller) pattern to separate business logic (the Controller), data structure (the Model), and presentation (the View).
