@@ -11,6 +11,14 @@ This repository contains the source code and documentation for a project to auto
 ### 🎯 Project Purpose
 The main goal of this project is to automate the process of retrieving and integrating publication data for the university's top researchers from Google Scholar into a local database. This system will serve as the primary source for generating accurate reports on scientific production.
 
+The purpose of an application like this is to create value from information.
+
+Transform chaos into order: It takes public, scattered, and unstructured data from the internet and converts it into a private, centralized, and structured information asset for an institution.
+
+It saves resources: Its purpose is to save hundreds of hours of manual labor, which directly translates into savings and allows people to focus on more important tasks such as analysis, rather than data collection.
+
+Enables business intelligence: With all the data in one place, a university can answer strategic questions: Who are our most productive researchers? In which areas are we publishing the most? Are we growing in impact year after year?
+
 ### ✨ Key Functionalities
 * Connects to the Google Scholar API via SerpApi to retrieve public data.
 * Fetches researcher profiles based on their unique author IDs using the MVC (Model-View-Controller) pattern.
