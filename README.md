@@ -151,24 +151,51 @@ Future expansion opportunities include:
     git clone [https://github.com/LuisDavid0912/UniversityResearcherIntegration.git](https://github.com/LuisDavid0912/UniversityResearcherIntegration.git)
     cd UniversityResearcherIntegration
     ```
-2.  **Create the `.env` file:**
-    Create a file named `.env` in the root of the `UniversityResearcherIntegration/` directory and also a copy inside the `app/` directory. Add your SerpApi key to both files:
+2.  **Set up the MySQL Database:**
+    Open MySQL Workbench, connect to your local server, and run the following SQL commands to create the database and the table:
+    ```sql
+    CREATE DATABASE university_research;
+    
+    USE university_research;
+    
+    CREATE TABLE articles (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        title VARCHAR(255) NOT NULL,
+        authors TEXT,
+        publication_info VARCHAR(255),
+        article_link TEXT,
+        researcher_name VARCHAR(255) NOT NULL,
+        retrieved_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    );
+    ```
+3.  **Create the `.env` file:**
+    Create a file named `.env` in the root of the `UniversityResearcherIntegration/` directory (and a copy inside `app/`). Add your API key and database credentials:
     ```bash
     SERPAPI_KEY="your_private_api_key_here"
+    DB_URL="jdbc:mysql://localhost:3306/university_research"
+    DB_USER="your_db_username"
+    DB_PASSWORD="your_db_password"
     ```
-3.  **Navigate to the app directory:**
+4.  **Navigate to the app directory:**
     ```bash
     cd app
     ```
-4.  **Build the project:**
+5.  **Build the project:**
     This command cleans previous builds and compiles the entire project.
     ```bash
     mvn clean install
     ```
-5.  **Run the application:**
-    This command executes the main class.
+6.  **Run the application:**
+    This command executes the main class, which will fetch data from the API and save it to your database.
     ```bash
     mvn exec:java -Dexec.mainClass="com.university.project.Main"
+    ```
+7.  **Verify the results in the database:**
+    Go back to MySQL Workbench and run a query to see the stored data:
+    ```sql
+    SELECT * FROM articles;
+    ```
+    You should see 6 rows of data in the results grid.xec:java -Dexec.mainClass="com.university.project.Main"
     ```
 </details>
 
