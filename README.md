@@ -128,9 +128,9 @@ Total estimated time: [5 weeks].
 
 Proposed payment plan:
 
-Option A: Per complete project -> $75,000 MXN + VAT (~$3,750 USD + Tax)
+Option A: Per complete project -> $45,000 MXN + IVA (~$3,750 USD + Tax)
 
-Option B: Per hour -> $700 MXN per hour (~$35 USD/hr) (estimated 110-130 hours)
+Option B: Per hour -> $400 MXN per hour (~$20 USD/hr) (estimated 110-130 hours)
 
 Option C: Extended package -> Contract for 10 hours per month for post-delivery support and maintenance for $6,000 MXN/month (~$300 USD/month).
 
@@ -138,11 +138,11 @@ Prices include professional labor. They do not include VAT or costs for material
 
 ### Payment terms
 
-30% advance payment upon acceptance of the proposal ($22,500 MXN).
+30% advance payment upon acceptance of the proposal ($13,500 MXN).
 
-40% upon delivery of the functional engine with API connection (end of Phase 2) ($30,000 MXN).
+40% upon delivery of the functional engine with API connection (end of Phase 2) ($14,850 MXN).
 
-30% upon completion and delivery of the entire project with database integration (end of Phase 4) ($22,500 MXN).
+30% upon completion and delivery of the entire project with database integration (end of Phase 4) ($13,500 MXN).
 
 Quote validity: 30 days from the date of issue.
 
