@@ -9,6 +9,7 @@
 This repository contains the source code and documentation for a project to automate the integration of researcher data from Google Scholar.
 
 ### 🎯 Project Purpose
+
 The main goal of this project is to automate the process of retrieving and integrating publication data for the university's top researchers from Google Scholar into a local database. This system will serve as the primary source for generating accurate reports on scientific production.
 
 The purpose of an application like this is to create value from information.
@@ -20,43 +21,148 @@ It saves resources: Its purpose is to save hundreds of hours of manual labor, wh
 Enables business intelligence: With all the data in one place, a university can answer strategic questions: Who are our most productive researchers? In which areas are we publishing the most? Are we growing in impact year after year?
 
 ### ✨ Key Functionalities
-* Connects to the Google Scholar API via SerpApi to retrieve public data.
-* Fetches researcher profiles based on their unique author IDs using the MVC (Model-View-Controller) pattern.
-* Retrieves a complete list of all publications for a given researcher.
-* Handles API keys and secrets securely using `.env` files.
-* (Sprint 3) Stores this information in a structured MySQL database for analysis and reporting.
+
+- Connects to the Google Scholar API via SerpApi to retrieve public data.
+- Fetches researcher profiles based on their unique author IDs using the MVC (Model-View-Controller) pattern.
+- Retrieves a complete list of all publications for a given researcher.
+- Handles API keys and secrets securely using `.env` files.
+- (Sprint 3) Stores this information in a structured MySQL database for analysis and reporting.
 
 ### 📈 Project Relevance
+
 This project solves the problem of manual, time-consuming, and error-prone data collection. It provides the university with an efficient, reliable, and up-to-date system for generating scientific production reports and analyzing research impact. By automating this workflow, staff can focus on analysis rather than data entry.
 
 ---
+
 <details>
 <summary>💡 <strong>Click to expand Commercial Viability & Business Model</strong></summary>
 
 ### 🎯 Target Audience
+
 This service is designed for institutions that need to track and analyze their research output, such as:
-* **Universities & Academic Institutions:** For accreditation, global rankings, and faculty performance reviews.
-* **Research Centers & Labs:** To justify funding and generate progress reports.
-* **Corporate R&D Departments:** To monitor internal innovation and competitor activity.
+
+- **Universities & Academic Institutions:** For accreditation, global rankings, and faculty performance reviews.
+- **Research Centers & Labs:** To justify funding and generate progress reports.
+- **Corporate R&D Departments:** To monitor internal innovation and competitor activity.
 
 ### 💰 Value Proposition
+
 The core value of this service lies in transforming a manual, error-prone process into an efficient, automated system that delivers:
-* **Cost Savings:** Drastically reduces the hours spent on manual data collection.
-* **Data Accuracy:** Provides reliable, up-to-date information for credible reporting.
-* **Strategic Insights:** Enables data-driven decisions on performance, funding, and hiring.
+
+- **Cost Savings:** Drastically reduces the hours spent on manual data collection.
+- **Data Accuracy:** Provides reliable, up-to-date information for credible reporting.
+- **Strategic Insights:** Enables data-driven decisions on performance, funding, and hiring.
 
 ### 🚀 Monetization Model: Software as a Service (SaaS)
+
 The proposed business model is a tiered subscription service, offering different levels of functionality to meet diverse needs.
 
-* **Starter Tier:** Aimed at small teams or individual labs, tracking a limited number of researchers with monthly data updates.
-* **Professional Tier:** Designed for entire departments or medium-sized institutions, offering a higher researcher limit, weekly updates, and data export features (CSV, PDF).
-* **Enterprise Tier:** A full solution for large universities, providing unlimited researchers, daily updates, advanced analytics dashboards, and API access for integration with their internal systems.
+- **Starter Tier:** Aimed at small teams or individual labs, tracking a limited number of researchers with monthly data updates.
+- **Professional Tier:** Designed for entire departments or medium-sized institutions, offering a higher researcher limit, weekly updates, and data export features (CSV, PDF).
+- **Enterprise Tier:** A full solution for large universities, providing unlimited researchers, daily updates, advanced analytics dashboards, and API access for integration with their internal systems.
 
 ### 🌐 Future Growth
+
 Future expansion opportunities include:
-* Integrating other data sources like Scopus, Web of Science, and PubMed.
-* Developing advanced citation and collaboration network analysis.
-* Offering cross-institutional benchmarking services.
+
+- Integrating other data sources like Scopus, Web of Science, and PubMed.
+- Developing advanced citation and collaboration network analysis.
+- Offering cross-institutional benchmarking services.
+
+## Proposal for Professional Services
+
+Luis David Martínez Gutiérrez
+Data Engineer
+luisdavidmtz3@gmail.com
+05 / 10 7 2025
+
+### Introduction:
+
+We appreciate the opportunity to present our proposal. Our goal is to provide professional solutions in the area of custom software development, guaranteeing quality, timely delivery, and a favorable cost-benefit ratio for your company, the University Innovation Center.
+
+### Project scope
+
+This service includes:
+
+Activity 1: Analysis of the Google Scholar API, design of the system architecture (MVC, DAO), and project planning (Backlog, Roadmap).
+
+Activity 2: Development of the data extraction engine in Java, including the logic to connect to the API, handle secure authentication, and process the received data (JSON).
+
+Activity 3: Design and implementation of the database in MySQL, including a normalized schema with tables for researchers and articles.
+
+Activity 4: Development of advanced features: pagination handling to obtain complete histories, logic to avoid duplicates in the database, and a dynamic configuration system.
+
+Not included (unless agreed separately):
+
+Development of a graphical or web interface (the current application is console-based).
+
+Future API licensing costs or higher consumption plans.
+
+Technical support and post-delivery maintenance (available under a monthly retainer agreement).
+
+### Deliverables
+
+Upon completion of the project, the following will be delivered:
+
+Complete source code for the Java application, documented and managed in a GitHub repository.
+
+Database script (schema.sql) for creating and configuring the structure in MySQL.
+
+Complete project documentation (README.md) including architecture, execution guide, and development log.
+
+Basic training for technical staff to run the application and manage the researchers to be processed from the database.
+
+### Estimated timeline
+
+Phase 1 – Planning and Analysis (Sprint 1): 1 week
+
+Phase 2 – Engine and API Development (Sprint 2): 2 weeks
+
+Phase 3 – Database Integration (Sprint 3): 1 week
+
+Phase 4 – Implementation of Improvements (Refactoring): 1 week
+
+Total estimated time: [5 weeks].
+
+### Financial investment
+
+Proposed payment plan:
+
+Option A: Per complete project -> $75,000 MXN + VAT (~$3,750 USD + Tax)
+
+Option B: Per hour -> $700 MXN per hour (~$35 USD/hr) (estimated 110-130 hours)
+
+Option C: Extended package -> Contract for 10 hours per month for post-delivery support and maintenance for $6,000 MXN/month (~$300 USD/month).
+
+Prices include professional labor. They do not include VAT or costs for materials or licenses, unless specified.
+
+### Payment terms
+
+30% advance payment upon acceptance of the proposal ($22,500 MXN).
+
+40% upon delivery of the functional engine with API connection (end of Phase 2) ($30,000 MXN).
+
+30% upon completion and delivery of the entire project with database integration (end of Phase 4) ($22,500 MXN).
+
+Quote validity: 30 days from the date of issue.
+
+### Customer Benefits
+
+Automation and Cost Savings: Complete elimination of the manual data collection process, freeing up valuable resources.
+
+Accuracy and Reliability: A comprehensive database free of human error is guaranteed, ideal for generating critical reports.
+
+Scalable and Professional Solution: The architecture used (MVC, DAO, normalized database) allows the system to grow and adapt to future needs.
+
+Autonomy and Control: The configuration of which researchers to process is managed from the database, giving the customer control without having to touch the code.
+
+Sincerely,
+
+Luis David Martínez Gutiérrez
+
+Software Engineer | Java Backend Developer
+
+luisdavidmtz3@gmail.com
 
 </details>
 
@@ -64,84 +170,92 @@ Future expansion opportunities include:
 <summary>🐛 <strong>Click to expand the detailed Debugging Log for Sprint 2</strong></summary>
 
 ### Error 1: `ClassNotFoundException`
-* **Situation:** I had just created the Model classes (`Author.java`, `Article.java`) and when trying to run the project for the first time, the program wouldn't start.
-* **Error:**
-    ```text
-    Error: Could not find or load main class com.university.Main
-    Caused by: java.lang.ClassNotFoundException: com.university.Main
-    ```
-* **Diagnosis:** The error meant that Java couldn't find the program's "entry point." This was because the project structure was still incomplete (missing the `Main.java` class, View, and Controller).
-* **Solution:** I understood that I couldn't run an incomplete program. The solution was to follow the development plan and build the remaining components (`View` and `Controller`) before attempting another execution.
+
+- **Situation:** I had just created the Model classes (`Author.java`, `Article.java`) and when trying to run the project for the first time, the program wouldn't start.
+- **Error:**
+  ```text
+  Error: Could not find or load main class com.university.Main
+  Caused by: java.lang.ClassNotFoundException: com.university.Main
+  ```
+- **Diagnosis:** The error meant that Java couldn't find the program's "entry point." This was because the project structure was still incomplete (missing the `Main.java` class, View, and Controller).
+- **Solution:** I understood that I couldn't run an incomplete program. The solution was to follow the development plan and build the remaining components (`View` and `Controller`) before attempting another execution.
 
 ### Error 2: API Key Not Found (Environment Variable)
-* **Situation:** With all the MVC code written, the program would run but stop immediately. I was using `System.getenv()` to read the API Key.
-* **Error:**
-    ```text
-    Error: No se encontró la variable de entorno 'SERPAPI_KEY'.
-    Por favor, configúrala antes de ejecutar el programa.
-    ```
-* **Diagnosis:** The `export SERPAPI_KEY="..."` command in the terminal is temporary and only works for that specific session. When running the program from an IDE or a new terminal, that variable is "forgotten".
-* **Solution:** I adopted a more robust and professional solution:
-    1.  Added the `dotenv-java` dependency to `pom.xml`.
-    2.  Created a `.env` file to securely store the API Key.
-    3.  Added the `.env` file to `.gitignore` to keep the secret key out of the repository.
-    4.  Modified `Main.java` to use the new library and read the key from the `.env` file.
+
+- **Situation:** With all the MVC code written, the program would run but stop immediately. I was using `System.getenv()` to read the API Key.
+- **Error:**
+  ```text
+  Error: No se encontró la variable de entorno 'SERPAPI_KEY'.
+  Por favor, configúrala antes de ejecutar el programa.
+  ```
+- **Diagnosis:** The `export SERPAPI_KEY="..."` command in the terminal is temporary and only works for that specific session. When running the program from an IDE or a new terminal, that variable is "forgotten".
+- **Solution:** I adopted a more robust and professional solution:
+  1.  Added the `dotenv-java` dependency to `pom.xml`.
+  2.  Created a `.env` file to securely store the API Key.
+  3.  Added the `.env` file to `.gitignore` to keep the secret key out of the repository.
+  4.  Modified `Main.java` to use the new library and read the key from the `.env` file.
 
 ### Error 3: `.env` File Not Found (`DotenvException`)
-* **Situation:** After configuring the `dotenv-java` library, the program still couldn't find the key.
-* **Error:**
-    ```text
-    io.github.cdimascio.dotenv.DotenvException: Could not find ./.env on the file system
-    ```
-* **Diagnosis:** The "working directory" changed depending on how the program was executed (IDE vs. Maven command line), creating confusion about where the `.env` file should be.
-* **Solution:** I implemented a "foolproof" solution: placed a copy of the `.env` file in **two locations**: one in the project root (`UniversityResearcherIntegration/`) and another inside the module folder (`app/`). This way, the program would always find it.
+
+- **Situation:** After configuring the `dotenv-java` library, the program still couldn't find the key.
+- **Error:**
+  ```text
+  io.github.cdimascio.dotenv.DotenvException: Could not find ./.env on the file system
+  ```
+- **Diagnosis:** The "working directory" changed depending on how the program was executed (IDE vs. Maven command line), creating confusion about where the `.env` file should be.
+- **Solution:** I implemented a "foolproof" solution: placed a copy of the `.env` file in **two locations**: one in the project root (`UniversityResearcherIntegration/`) and another inside the module folder (`app/`). This way, the program would always find it.
 
 ### Error 4: Maven Failure (`No POM in this directory`)
-* **Situation:** This error appeared several times when trying to run the program from the terminal.
-* **Error:**
-    ```text
-    [ERROR] Failed to execute goal ... there is no POM in this directory
-    ```
-* **Diagnosis:** The `mvn` command was being executed in the wrong folder. Maven needs to be in the same folder as the `pom.xml` file to work, which in my case was the `app/` folder.
-* **Solution:** I established the "Golden Rule": Always navigate into the correct folder with `cd app` **before** executing any `mvn` command.
+
+- **Situation:** This error appeared several times when trying to run the program from the terminal.
+- **Error:**
+  ```text
+  [ERROR] Failed to execute goal ... there is no POM in this directory
+  ```
+- **Diagnosis:** The `mvn` command was being executed in the wrong folder. Maven needs to be in the same folder as the `pom.xml` file to work, which in my case was the `app/` folder.
+- **Solution:** I established the "Golden Rule": Always navigate into the correct folder with `cd app` **before** executing any `mvn` command.
 
 ### Error 5: API Returning Partial Data
-* **Situation:** The program finally ran without configuration errors but the result was `No se pudo obtener la información del autor`.
-* **Logical Error:** The JSON response only contained metadata, not the actual author data.
-* **Diagnosis:** The `author_id` of the first researcher I tested was returning an incomplete JSON payload for an unknown reason.
-* **Solution:** As a diagnostic step, I changed the `author_id` in `Main.java` to that of another researcher (Yoshua Bengio), which allowed me to receive a complete JSON response.
+
+- **Situation:** The program finally ran without configuration errors but the result was `No se pudo obtener la información del autor`.
+- **Logical Error:** The JSON response only contained metadata, not the actual author data.
+- **Diagnosis:** The `author_id` of the first researcher I tested was returning an incomplete JSON payload for an unknown reason.
+- **Solution:** As a diagnostic step, I changed the `author_id` in `Main.java` to that of another researcher (Yoshua Bengio), which allowed me to receive a complete JSON response.
 
 ### Error 6: JSON Parsing Error (`JsonSyntaxException` in `interests`)
-* **Situation:** Using the new `author_id`, the program received data but crashed when trying to read it.
-* **Error:**
-    ```text
-    JsonSyntaxException: ... Expected a STRING but was BEGIN_OBJECT at path $.author.interests[0]
-    ```
-* **Diagnosis:** My `Author.java` class expected a list of simple strings (`List<String>`) for the `interests` field, but the API sent me a list of more complex objects.
-* **Solution:**
-    1.  Created a new `Interest.java` class to match the object structure.
-    2.  Modified `Author.java` to use `List<Interest>`.
-    3.  Adjusted `AuthorView.java` to correctly read and display the titles from this new list of objects.
+
+- **Situation:** Using the new `author_id`, the program received data but crashed when trying to read it.
+- **Error:**
+  ```text
+  JsonSyntaxException: ... Expected a STRING but was BEGIN_OBJECT at path $.author.interests[0]
+  ```
+- **Diagnosis:** My `Author.java` class expected a list of simple strings (`List<String>`) for the `interests` field, but the API sent me a list of more complex objects.
+- **Solution:**
+  1.  Created a new `Interest.java` class to match the object structure.
+  2.  Modified `Author.java` to use `List<Interest>`.
+  3.  Adjusted `AuthorView.java` to correctly read and display the titles from this new list of objects.
 
 ### Error 7: Publication List Not Appearing
-* **Situation:** After fixing the `interests` issue, the program showed author data but still no publications.
-* **Logical Error:** The article list wasn't being parsed from the JSON.
-* **Diagnosis:** After analyzing the full JSON, I discovered two things:
-    1.  The `articles` list was a "sibling" to the `author` object, not nested inside it.
-    2.  The publication field was named `publication`, not `publication_info`.
-* **Solution:**
-    1.  Moved the `List<Article> articles` field from the `Author.java` class to the `ApiResponse.java` class.
-    2.  Renamed the field in `Article.java` from `publication_info` to `publication`.
-    3.  Adjusted `AuthorView.java` and `AuthorController.java` to handle this correct structure.
+
+- **Situation:** After fixing the `interests` issue, the program showed author data but still no publications.
+- **Logical Error:** The article list wasn't being parsed from the JSON.
+- **Diagnosis:** After analyzing the full JSON, I discovered two things:
+  1.  The `articles` list was a "sibling" to the `author` object, not nested inside it.
+  2.  The publication field was named `publication`, not `publication_info`.
+- **Solution:**
+  1.  Moved the `List<Article> articles` field from the `Author.java` class to the `ApiResponse.java` class.
+  2.  Renamed the field in `Article.java` from `publication_info` to `publication`.
+  3.  Adjusted `AuthorView.java` and `AuthorController.java` to handle this correct structure.
 
 ### Error 8: "Ghost" Compilation Error (`Unresolved compilation problem`)
-* **Situation:** After restructuring the Model classes, the program refused to compile despite the code being syntactically correct.
-* **Error:**
-    ```text
-    java.lang.Error: Unresolved compilation problem: ... missing type Article
-    ```
-* **Diagnosis:** Maven or the IDE were using "stale" or corrupted versions of the previously compiled files (`.class`), causing type confusion.
-* **Solution:** I forced a complete and clean rebuild of the project using the command `mvn clean install`. This deleted all old compiled files and rebuilt the project from scratch, resolving the "ghost" error.
+
+- **Situation:** After restructuring the Model classes, the program refused to compile despite the code being syntactically correct.
+- **Error:**
+  ```text
+  java.lang.Error: Unresolved compilation problem: ... missing type Article
+  ```
+- **Diagnosis:** Maven or the IDE were using "stale" or corrupted versions of the previously compiled files (`.class`), causing type confusion.
+- **Solution:** I forced a complete and clean rebuild of the project using the command `mvn clean install`. This deleted all old compiled files and rebuilt the project from scratch, resolving the "ghost" error.
 
 </details>
 
@@ -149,11 +263,13 @@ Future expansion opportunities include:
 <summary>🚀 <strong>Click to expand How to Execute</strong></summary>
 
 ### Prerequisites
-* Java JDK 17 or higher
-* Maven 3.6 or higher
-* A SerpApi account and your private API key
+
+- Java JDK 17 or higher
+- Maven 3.6 or higher
+- A SerpApi account and your private API key
 
 ### Installation and Execution
+
 1.  **Clone the repository:**
     ```bash
     git clone [https://github.com/LuisDavid0912/UniversityResearcherIntegration.git](https://github.com/LuisDavid0912/UniversityResearcherIntegration.git)
@@ -161,11 +277,12 @@ Future expansion opportunities include:
     ```
 2.  **Set up the MySQL Database:**
     Open MySQL Workbench, connect to your local server, and run the following SQL commands to create the database and the table:
+
     ```sql
     CREATE DATABASE university_research;
-    
+
     USE university_research;
-    
+
     CREATE TABLE articles (
         id INT AUTO_INCREMENT PRIMARY KEY,
         title VARCHAR(255) NOT NULL,
@@ -176,6 +293,7 @@ Future expansion opportunities include:
         retrieved_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
     );
     ```
+
 3.  **Create the `.env` file:**
     Create a file named `.env` in the root of the `UniversityResearcherIntegration/` directory (and a copy inside `app/`). Add your API key and database credentials:
     ```bash
@@ -199,47 +317,55 @@ Future expansion opportunities include:
     mvn exec:java -Dexec.mainClass="com.university.project.Main"
     ```
 7.  **Verify the results in the database:**
-    Go back to MySQL Workbench and run a query to see the stored data:
-    ```sql
+Go back to MySQL Workbench and run a query to see the stored data:
+`sql
     SELECT * FROM articles;
-    ```
-    You should see 6 rows of data in the results grid.xec:java -Dexec.mainClass="com.university.project.Main"
-    ```
+    `
+You should see 6 rows of data in the results grid.xec:java -Dexec.mainClass="com.university.project.Main"
+```
 </details>
 
 <details>
 <summary>🔧 <strong> Current Status of The Project: A Robust Data Integration Application</strong></summary>
 
 ## Professional Architecture:
+
 Uses the MVC (Model-View-Controller) pattern to separate business logic (the Controller), data structure (the Model), and presentation (the View).
 
 Uses the DAO (Data Access Object) pattern to isolate all communication with the database, keeping your business logic clean of SQL code.
 
 ## Key Features:
+
 Dynamic Configuration: The application no longer depends on hardcoded data. It reads its “task list” (which researchers to process) directly from the database (researchers with is_tracked = TRUE).
 
-### Secure Connection: 
+### Secure Connection:
+
 Load all sensitive credentials (API Key, database username and password) from an .env file that is ignored by Git, following best security practices.
 
-### External API Integration: 
+### External API Integration:
+
 Efficiently connect to the SerpApi API to obtain data in JSON format.
 
-### Pagination Handling: 
+### Pagination Handling:
+
 Not satisfied with the first page. Automatically iterates over all pages of results for a researcher to obtain their complete publication history.
 
-### Limit Control: 
+### Limit Control:
+
 Despite being able to obtain all the data, I added a “control knob” (ARTICLE_LIMIT) to limit the number of articles to be processed, making it more efficient and controllable for evaluation.
 
-### Persistence in Normalized Database: 
+### Persistence in Normalized Database:
+
 Stores information in a well-structured MySQL database, with separate tables for researchers and articles, connected by a foreign key (FOREIGN KEY). This avoids redundancy and is the professional standard.
 
-### Duplicate Handling: 
+### Duplicate Handling:
+
 It is smart enough not to create duplicate researchers in the database thanks to the “search or create” logic of ResearcherDao.
 
 ### Robust Error Handling:
+
 The application does not crash if the API returns an unexpected response; instead, it reports the error and continues with the next researcher.
 
-</details>
----
+## </details>
 
 <p align="center"><i>This project is being developed as part of the Digital NAO "Server and Database Commands" challenge.</i></p>
